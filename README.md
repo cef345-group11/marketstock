@@ -8,3 +8,4 @@
 | Leh Tobias Berinyuy | FE25A109 | Project management | lehtberinyuy-create |
 | Dzembuin Nickson| FE25A051 | Design lead| nickson-25 |
 | Anye Nathaniel Frungwa| FE25A012 | Design| lordnate-exp |
+| Emeka Bryan Chinedu | FE25A062 | Release & Doc..| tzybryan7

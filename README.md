@@ -1,4 +1,4 @@
-# MarketStock
+|# MarketStock
 
 ## Team
 
@@ -8,4 +8,5 @@
 | Leh Tobias Berinyuy | FE25A109 | Project management | lehtberinyuy-create |
 | Dzembuin Nickson| FE25A051 | Design lead| nickson-25 |
 | Anye Nathaniel Frungwa| FE25A012 | Design| lordnate-exp |
+|Magang Tiendo Francesco | FE25A116| Analyst | francescoangelo195-wq
 | Emeka Bryan Chinedu | FE25A062 | Release & Doc..| tzybryan7

@@ -11,3 +11,4 @@
 | Anye Nathaniel Frungwa| FE25A012 | Design| lordnate-exp |
 |Magang Tiendo Francesco | FE25A116| Analyst | francescoangelo195-wq
 | Emeka Bryan Chinedu | FE25A062 | Release & Doc..| tzybryan7
+Manga Tenefosso Hilary | FE25A120 | Analysis | Manga267

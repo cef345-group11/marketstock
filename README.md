@@ -12,3 +12,5 @@
 |Magang Tiendo Francesco | FE25A116| Analyst | francescoangelo195-wq
 | Emeka Bryan Chinedu | FE25A062 | Release & Doc..| tzybryan7
 | Manga Tenefosso Hilary| FE25A120 | Analysis(backend) |Manga267
+|Fofang Ddenzel-Jude Anye| FE25A073 | Testing & QA(backend) |denzelfofang310-code 
+

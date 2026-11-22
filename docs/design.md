@@ -114,6 +114,11 @@ sale_items	id	sale_id → sales(id), product_id → products(id)
 repayments	id	customer_id → customers(id), user_id → users(id)
 
 Note: The customer_id in the sales table can be empty because not every sale is a credit sale.
+## 5. Entity-Relationship Diagram (ERD)
+
+The Entity-Relationship Diagram illustrates the database entities, their attributes and the relationships between them.
+
+![MarketStock ER Diagram](diagrams/marketstock-erd.drawio.svg)
 6.1 Proposed API Endpoints
 
 HTTP Method	Endpoint	Purpose

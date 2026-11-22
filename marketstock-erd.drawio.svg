@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120">
+<defs>
+  <style>
+    .title{font: bold 30px Arial,sans-serif; fill:#172033}
+    .subtitle{font:16px Arial,sans-serif; fill:#475569}
+    .tbl{fill:#fff;stroke:#334155;stroke-width:2;rx:9}
+    .head{fill:#dbeafe;stroke:#334155;stroke-width:2}
+    .name{font:bold 19px Arial,sans-serif;fill:#0f172a}
+    .field{font:15px Arial,sans-serif;fill:#1e293b}
+    .key{font:bold 14px Arial,sans-serif;fill:#1d4ed8}
+    .rel{stroke:#64748b;stroke-width:2.5;fill:none}
+    .card{font:bold 14px Arial,sans-serif;fill:#334155}
+    .note{font:13px Arial,sans-serif;fill:#475569}
+  </style>
+</defs>
+<rect width="1600" height="1120" fill="#f8fafc"/>
+<text x="800" y="48" text-anchor="middle" class="title">MarketStock Entity–Relationship Diagram</text>
+<text x="800" y="76" text-anchor="middle" class="subtitle">Seven relational tables • Primary keys (PK) • Foreign keys (FK)</text>
+
+<!-- Relationships behind tables: parent (1) to child (many) -->
+<g class="rel">
+ <!-- users to restocks -->
+ <path d="M390 210 H530"/>
+ <!-- users to sales -->
+ <path d="M390 260 H455 V490 H530"/>
+ <!-- users to repayments -->
+ <path d="M390 300 H425 V915 H530"/>
+ <!-- products to restocks -->
+ <path d="M390 450 H470 V290 H530"/>
+ <!-- products to sale_items -->
+ <path d="M390 535 H1145 V550 H1210"/>
+ <!-- customers to sales -->
+ <path d="M390 875 H485 V555 H530"/>
+ <!-- customers to repayments -->
+ <path d="M390 960 H530"/>
+ <!-- sales to sale_items -->
+ <path d="M880 490 H1210"/>
+</g>
+
+<!-- users -->
+<g transform="translate(60,120)">
+ <rect class="tbl" width="330" height="205"/>
+ <rect class="head" width="330" height="42" rx="8"/>
+ <text x="165" y="28" text-anchor="middle" class="name">users</text>
+ <text x="16" y="69" class="field">🔑 id INTEGER PRIMARY KEY</text>
+ <text x="16" y="96" class="field">name TEXT NOT NULL</text>
+ <text x="16" y="123" class="field">phone TEXT</text>
+ <text x="16" y="150" class="field">password_hash TEXT NOT NULL</text>
+ <text x="16" y="177" class="field">role TEXT (owner / assistant)</text>
+</g>
+
+<!-- products -->
+<g transform="translate(60,390)">
+ <rect class="tbl" width="330" height="205"/>
+ <rect class="head" width="330" height="42" rx="8"/>
+ <text x="165" y="28" text-anchor="middle" class="name">products</text>
+ <text x="16" y="69" class="field">🔑 id INTEGER PRIMARY KEY</text>
+ <text x="16" y="96" class="field">name TEXT NOT NULL</text>
+ <text x="16" y="123" class="field">unit TEXT</text>
+ <text x="16" y="150" class="field">buy_price, sell_price INTEGER</text>
+ <text x="16" y="177" class="field">quantity, min_quantity INTEGER</text>
+</g>
+
+<!-- customers -->
+<g transform="translate(60,840)">
+ <rect class="tbl" width="330" height="155"/>
+ <rect class="head" width="330" height="42" rx="8"/>
+ <text x="165" y="28" text-anchor="middle" class="name">customers</text>
+ <text x="16" y="69" class="field">🔑 id INTEGER PRIMARY KEY</text>
+ <text x="16" y="96" class="field">name TEXT NOT NULL</text>
+ <text x="16" y="123" class="field">phone TEXT</text>
+ <text x="16" y="146" class="field">balance INTEGER</text>
+</g>
+
+<!-- restocks -->
+<g transform="translate(530,120)">
+ <rect class="tbl" width="350" height="205"/>
+ <rect class="head" width="350" height="42" rx="8"/>
+ <text x="175" y="28" text-anchor="middle" class="name">restocks</text>
+ <text x="16" y="69" class="field">🔑 id INTEGER PRIMARY KEY</text>
+ <text x="16" y="96" class="field">🔗 product_id FK → products.id</text>
+ <text x="16" y="123" class="field">quantity, unit_cost INTEGER</text>
+ <text x="16" y="150" class="field">supplier TEXT</text>
+ <text x="16" y="177" class="field">🔗 user_id FK → users.id</text>
+ <text x="16" y="198" class="field">created_at TEXT</text>
+</g>
+
+<!-- sales -->
+<g transform="translate(530,390)">
+ <rect class="tbl" width="350" height="205"/>
+ <rect class="head" width="350" height="42" rx="8"/>
+ <text x="175" y="28" text-anchor="middle" class="name">sales</text>
+ <text x="16" y="69" class="field">🔑 id INTEGER PRIMARY KEY</text>
+ <text x="16" y="96" class="field">🔗 user_id FK → users.id</text>
+ <text x="16" y="123" class="field">🔗 customer_id FK → customers.id</text>
+ <text x="16" y="150" class="field">payment_method TEXT</text>
+ <text x="16" y="177" class="field">total INTEGER</text>
+ <text x="16" y="198" class="field">created_at TEXT</text>
+</g>
+
+<!-- repayments -->
+<g transform="translate(530,840)">
+ <rect class="tbl" width="350" height="155"/>
+ <rect class="head" width="350" height="42" rx="8"/>
+ <text x="175" y="28" text-anchor="middle" class="name">repayments</text>
+ <text x="16" y="69" class="field">🔑 id INTEGER PRIMARY KEY</text>
+ <text x="16" y="96" class="field">🔗 customer_id FK → customers.id</text>
+ <text x="16" y="123" class="field">amount INTEGER</text>
+ <text x="16" y="146" class="field">🔗 user_id FK → users.id</text>
+ <text x="16" y="169" class="field">created_at TEXT</text>
+</g>
+
+<!-- sale_items -->
+<g transform="translate(1210,390)">
+ <rect class="tbl" width="340" height="205"/>
+ <rect class="head" width="340" height="42" rx="8"/>
+ <text x="170" y="28" text-anchor="middle" class="name">sale_items</text>
+ <text x="16" y="69" class="field">🔑 id INTEGER PRIMARY KEY</text>
+ <text x="16" y="96" class="field">🔗 sale_id FK → sales.id</text>
+ <text x="16" y="123" class="field">🔗 product_id FK → products.id</text>
+ <text x="16" y="150" class="field">quantity INTEGER</text>
+ <text x="16" y="177" class="field">unit_price INTEGER</text>
+ <text x="16" y="198" class="field">unit_cost INTEGER</text>
+</g>
+
+<!-- relationship labels -->
+<g class="card">
+ <text x="445" y="198">1 : many</text>
+ <text x="465" y="478">1 : many</text>
+ <text x="440" y="895">1 : many</text>
+ <text x="425" y="438">1 : many</text>
+ <text x="760" y="525">1 : many</text>
+ <text x="450" y="860">1 : many</text>
+ <text x="440" y="950">1 : many</text>
+ <text x="1010" y="478">1 : many</text>
+</g>
+</svg>
